@@ -1,0 +1,17 @@
+CXX      = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2
+TARGET   = bank_management
+SRC      = bank_management.cpp
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+
+clean:
+	rm -f $(TARGET) bank_data.dat
+
+run: all
+	./$(TARGET)
+
+.PHONY: all clean run
